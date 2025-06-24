@@ -34,8 +34,8 @@ const BookmarkDrawer = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className={`fixed top-0 right-0 h-full z-50 text-white bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-md 
-      w-full sm:w-1/2 max-w-md transition-transform duration-500 ease-in-out
+      className={`fixed top-0 right-0 h-full z-50 text-white bg-[rgb(16_27_52)] shadow-md 
+      w-full sm:w-1/2 max-w-md transition-transform duration-500 ease-in-out 
       ${
         isOpen
           ? slideIn
@@ -45,7 +45,7 @@ const BookmarkDrawer = ({ isOpen, onClose }) => {
       }`}
     >
       {/* Header */}
-      <div className="flex justify-between items-center p-4 border-b border-gray-700">
+      <div className="flex justify-between items-center p-4 border-b bg-gray-900/70 backdrop-blur border-b border-gray-700/40 border-gray-700">
         <h2 className="text-lg flex gap-2 items-center font-semibold">
           <Bookmark className="w-6 h-6 text-yellow-400" /> Bookmarked
           Repositories
@@ -56,7 +56,7 @@ const BookmarkDrawer = ({ isOpen, onClose }) => {
       </div>
 
       {/* Search + Clear All */}
-      <div className="flex items-center justify-between gap-2 px-4 py-3 border-b border-gray-700">
+      <div className="flex items-center justify-between gap-2 px-4 py-4 border-gray-700">
         <div className="relative w-80">
           <input
             type="text"
