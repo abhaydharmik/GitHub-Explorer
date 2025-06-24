@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Star,
-  Bug,
-  Trash2,
-  GitBranch,
-  Calendar,
-} from "lucide-react";
+import { Star, Bug, Trash2, GitBranch, Calendar } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { useBookmarks } from "../context/BookmarkContext";
 

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import BookmarkList from "./BookmarkList";
 import { Bookmark, X, Search } from "lucide-react";
-import { useBookmarks } from "../context/BookmarkContext"; // <-- Import context
+import { useBookmarks } from "../context/BookmarkContext";
 
 const BookmarkDrawer = ({ isOpen, onClose }) => {
   const [slideIn, setSlideIn] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const { clearBookmarks } = useBookmarks(); // <-- Get method from context
+  const { clearBookmarks } = useBookmarks();
 
   useEffect(() => {
     const handleEscape = (e) => {
@@ -49,7 +49,8 @@ const BookmarkDrawer = ({ isOpen, onClose }) => {
       {/* Header */}
       <div className="flex justify-between items-center p-4 border-b border-gray-700">
         <h2 className="text-lg flex gap-2 items-center font-semibold">
-          <Bookmark className="w-6 h-6 text-yellow-400" /> Bookmarked Repositories
+          <Bookmark className="w-6 h-6 text-yellow-400" /> Bookmarked
+          Repositories
         </h2>
         <button onClick={onClose}>
           <X className="w-5 h-5" />

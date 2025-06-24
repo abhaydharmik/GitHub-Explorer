@@ -47,7 +47,10 @@ const StatsPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-900/10 via-blue-900/10 to-gray-900/10 text-white">
       {/* Navbar & Bookmark Drawer */}
       <Navbar onToggleBookmarks={() => setShowDrawer(true)} />
-      <BookmarkDrawer isOpen={showDrawer} onClose={() => setShowDrawer(false)} />
+      <BookmarkDrawer
+        isOpen={showDrawer}
+        onClose={() => setShowDrawer(false)}
+      />
 
       {/* Main */}
       <main className="w-full px-4 sm:px-6 md:px-10 pt-8 pb-16">

@@ -5,11 +5,25 @@ import Navbar from "../components/Navbar";
 import BookmarkDrawer from "../components/BookmarkDrawer";
 import RepoCardGrid from "../components/RepoCardGrid";
 import Footer from "../components/Footer";
-import Reveal from "../components/Reveal"; 
+import Reveal from "../components/Reveal";
 
 const POPULAR_LANGUAGES = [
-  "all", "JavaScript", "TypeScript", "Python", "Java", "Go", "Rust",
-  "C++", "C#", "PHP", "Ruby", "Swift", "Kotlin", "Dart", "Vue", "React",
+  "all",
+  "JavaScript",
+  "TypeScript",
+  "Python",
+  "Java",
+  "Go",
+  "Rust",
+  "C++",
+  "C#",
+  "PHP",
+  "Ruby",
+  "Swift",
+  "Kotlin",
+  "Dart",
+  "Vue",
+  "React",
 ];
 
 const defaultFilters = {
@@ -38,7 +52,13 @@ const SearchPage = () => {
     }, 500);
 
     return () => clearTimeout(delayDebounce);
-  }, [filters.query, filters.language, filters.sort, filters.order, filters.minStars]);
+  }, [
+    filters.query,
+    filters.language,
+    filters.sort,
+    filters.order,
+    filters.minStars,
+  ]);
 
   const handleInputChange = (field, value) =>
     setFilters((prev) => ({ ...prev, [field]: value }));
@@ -54,7 +74,9 @@ const SearchPage = () => {
 
     try {
       const res = await fetch(
-        `https://api.github.com/search/repositories?q=${encodeURIComponent(q)}&sort=${filters.sort}&order=${filters.order}&per_page=20`
+        `https://api.github.com/search/repositories?q=${encodeURIComponent(
+          q
+        )}&sort=${filters.sort}&order=${filters.order}&per_page=20`
       );
       const data = await res.json();
       if (data.items) {
@@ -78,7 +100,10 @@ const SearchPage = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-900/10 via-blue-900/10 to-gray-900/10 text-white">
       <Navbar onToggleBookmarks={() => setShowDrawer(true)} />
-      <BookmarkDrawer isOpen={showDrawer} onClose={() => setShowDrawer(false)} />
+      <BookmarkDrawer
+        isOpen={showDrawer}
+        onClose={() => setShowDrawer(false)}
+      />
 
       <div className="flex-1 px-4 sm:px-6 md:px-10 w-full max-w-screen-xl mx-auto">
         {/* Search Box */}
@@ -113,17 +138,25 @@ const SearchPage = () => {
             </div>
 
             {/* Advanced Filters */}
-            <div className={`transition-all duration-500 ease-in-out overflow-hidden ${showAdvanced ? "max-h-[1000px]" : "max-h-0"}`}>
+            <div
+              className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                showAdvanced ? "max-h-[1000px]" : "max-h-0"
+              }`}
+            >
               {showAdvanced && (
                 <Reveal delay={0.2}>
                   <div className="space-y-4 pt-4 border-t border-gray-700/50">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                       {/* Language Filter */}
                       <div>
-                        <label className="block text-sm text-gray-300 mb-2">Language</label>
+                        <label className="block text-sm text-gray-300 mb-2">
+                          Language
+                        </label>
                         <select
                           value={filters.language}
-                          onChange={(e) => handleInputChange("language", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("language", e.target.value)
+                          }
                           className="w-full px-3 py-2 bg-gray-900/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 text-white"
                         >
                           {POPULAR_LANGUAGES.map((lang) => (
@@ -136,10 +169,14 @@ const SearchPage = () => {
 
                       {/* Sort */}
                       <div>
-                        <label className="block text-sm text-gray-300 mb-2">Sort by</label>
+                        <label className="block text-sm text-gray-300 mb-2">
+                          Sort by
+                        </label>
                         <select
                           value={filters.sort}
-                          onChange={(e) => handleInputChange("sort", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("sort", e.target.value)
+                          }
                           className="w-full px-3 py-2 bg-gray-900/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 text-white"
                         >
                           <option value="stars">Stars</option>
@@ -151,10 +188,14 @@ const SearchPage = () => {
 
                       {/* Order */}
                       <div>
-                        <label className="block text-sm text-gray-300 mb-2">Order</label>
+                        <label className="block text-sm text-gray-300 mb-2">
+                          Order
+                        </label>
                         <select
                           value={filters.order}
-                          onChange={(e) => handleInputChange("order", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("order", e.target.value)
+                          }
                           className="w-full px-3 py-2 bg-gray-900/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 text-white"
                         >
                           <option value="desc">Descending</option>
@@ -164,11 +205,18 @@ const SearchPage = () => {
 
                       {/* Min Stars */}
                       <div>
-                        <label className="block text-sm text-gray-300 mb-2">Min Stars</label>
+                        <label className="block text-sm text-gray-300 mb-2">
+                          Min Stars
+                        </label>
                         <input
                           type="number"
                           value={filters.minStars}
-                          onChange={(e) => handleInputChange("minStars", parseInt(e.target.value) || 0)}
+                          onChange={(e) =>
+                            handleInputChange(
+                              "minStars",
+                              parseInt(e.target.value) || 0
+                            )
+                          }
                           className="w-full px-3 py-2 bg-gray-900/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 text-white"
                           min="0"
                         />
@@ -176,7 +224,10 @@ const SearchPage = () => {
                     </div>
 
                     <div className="pt-2 flex justify-between items-center">
-                      <button onClick={clearFilters} className="flex items-center gap-2 text-gray-400 hover:text-white">
+                      <button
+                        onClick={clearFilters}
+                        className="flex items-center gap-2 text-gray-400 hover:text-white"
+                      >
                         <X className="w-4 h-4" /> Clear Filters
                       </button>
                     </div>
@@ -208,18 +259,14 @@ const SearchPage = () => {
         {/* Loading or Error */}
         {loading && (
           <div className="w-full flex justify-center items-center h-48">
-          <div className="animate-spin rounded-full h-10 w-10 border-4 border-blue-500 border-t-transparent"></div>
-        </div>
+            <div className="animate-spin rounded-full h-10 w-10 border-4 border-blue-500 border-t-transparent"></div>
+          </div>
         )}
-        {error && (
-          <div className="text-center text-red-500 mt-6">{error}</div>
-        )}
+        {error && <div className="text-center text-red-500 mt-6">{error}</div>}
       </div>
 
       {/* Footer */}
-      {repos.length > 0 && !loading && !error && (
-          <Footer />
-      )}
+      {repos.length > 0 && !loading && !error && <Footer />}
     </div>
   );
 };

@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  FaDiscord,
-  FaLinkedin,
-  FaXTwitter,
-} from "react-icons/fa6";
+import { FaDiscord, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { FiInstagram } from "react-icons/fi";
 
 const Footer = () => {
@@ -13,7 +9,8 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-4">
           {/* Copyright */}
           <p className="text-gray-300">
-            © {new Date().getFullYear()} GitHub Project Explorer. All rights reserved.
+            © {new Date().getFullYear()} GitHub Project Explorer. All rights
+            reserved.
           </p>
 
           {/* Social Icons */}
