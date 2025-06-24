@@ -20,7 +20,7 @@ const BookmarkDrawer = ({ isOpen, onClose }) => {
       window.addEventListener("keydown", handleEscape);
     } else {
       setSlideIn(false);
-      setSearchTerm(""); // Clear search when drawer closes
+      setSearchTerm("");
     }
 
     return () => {
@@ -29,9 +29,7 @@ const BookmarkDrawer = ({ isOpen, onClose }) => {
   }, [isOpen, onClose]);
 
   const handleClearAll = () => {
-    // if (window.confirm("Are you sure you want to clear all bookmarks?")) {
-    // }
-    clearBookmarks(); // ✅ No reload needed
+    clearBookmarks();
   };
 
   return (
