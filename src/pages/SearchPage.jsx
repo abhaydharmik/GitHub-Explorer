@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 import BookmarkDrawer from "../components/BookmarkDrawer";
 import RepoCardGrid from "../components/RepoCardGrid";
 import Footer from "../components/Footer";
-import Reveal from "../components/Reveal"; // ✅ Make sure Reveal component exists
+import Reveal from "../components/Reveal"; 
 
 const POPULAR_LANGUAGES = [
   "all", "JavaScript", "TypeScript", "Python", "Java", "Go", "Rust",

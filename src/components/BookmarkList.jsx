@@ -30,7 +30,7 @@ const BookmarkList = ({ searchTerm = "" }) => {
     return map[lang] || "#6b7280";
   };
 
-  // 🔍 Filter bookmarks based on search term
+  // Filter bookmarks based on search term
   const filteredBookmarks = bookmarks.filter((repo) =>
     `${repo.name} ${repo.description ?? ""} ${repo.owner.login}`
       .toLowerCase()

@@ -1,11 +1,10 @@
-// src/components/SlideInPage.jsx
 import { useEffect, useState } from "react";
 
 const SlideInPage = ({ children }) => {
   const [slide, setSlide] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setSlide(true), 10); // allow CSS to apply
+    const timer = setTimeout(() => setSlide(true), 10);
     return () => clearTimeout(timer);
   }, []);
 

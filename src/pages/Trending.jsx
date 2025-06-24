@@ -5,7 +5,7 @@ import RepoCardGrid from "../components/RepoCardGrid";
 import Footer from "../components/Footer";
 import BookmarkDrawer from "../components/BookmarkDrawer";
 import { ArrowUp, TrendingUp } from "lucide-react";
-import Reveal from "../components/Reveal"; // 🔸 Import Reveal
+import Reveal from "../components/Reveal";
 
 const Trending = () => {
   document.title = "Trending | GitHub Explorer";

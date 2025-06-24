@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
@@ -47,7 +46,7 @@ const LoadingBarWrapper = () => {
 const App = () => {
   return (
     <Router>
-      {/* 🔔 Global Toasts */}
+      {/* Global Toasts */}
       <Toaster
         position="bottom-left"
         reverseOrder={false}
@@ -58,7 +57,7 @@ const App = () => {
           },
         }}
       />
-      {/* ⏳ NProgress + Routing */}
+      {/* NProgress + Routing */}
       <LoadingBarWrapper />
     </Router>
   );

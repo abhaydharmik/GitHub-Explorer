@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { Star, AlertCircle, Trash2, TrashIcon } from "lucide-react";
-import toast from "react-hot-toast"; // ✅ import toast
+import toast from "react-hot-toast";
 
 const BookmarkContext = createContext();
 

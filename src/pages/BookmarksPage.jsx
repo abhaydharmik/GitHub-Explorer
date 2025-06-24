@@ -1,4 +1,3 @@
-// src/pages/BookmarksPage.jsx
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import BookmarkList from "../components/BookmarkList";
