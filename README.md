@@ -4,7 +4,7 @@ A modern web application to discover, filter, and analyze trending open-source r
 
 **Live Demo:** 
 
-🔗 https://github-explorer-theta-ten.vercel.app/
+🔗 [https://github-explorer-theta-ten.vercel.app/](https://github-explorer-gold-six.vercel.app/)
 
 ## Features
 
