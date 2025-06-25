@@ -12,7 +12,7 @@ A modern web application to discover, filter, and analyze trending open-source r
 - 🧠 Filter by language  
 - 📊 Stats charts: stars, forks, issues  
 - 📌 Bookmark repositories with 📝 personal notes  
-- ♾️ Infinite scroll for search results  
+- ♾️ Infinite scroll for trending repos  
 - ✨ Smooth animations with Framer Motion  
 - 🔔 Toast notifications and top progress bar  
 
